@@ -82,7 +82,9 @@ If you want to destroy your Minecraft Server instances, just run:
 
 ## Playing
 
-Just grab your server IP address (`output.json`) and start playing on your brand new server!
+* Grab your server IP address (`output.json`)
+* Go to Multiplayer on your Minecraft Client
+* Add your brand new server and start playing!
 
 ## Costs
 
