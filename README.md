@@ -18,6 +18,16 @@
 
 TODO
 
+## Which resources does Terraform will provision?
+
+### AWS
+
+* t2.medium - us-east
+
+### Hetzner
+
+TODO
+
 ## How to
 
 ### Customization
@@ -69,6 +79,10 @@ If you want to destroy your Minecraft Server instances, just run:
 ```bash
 ./destroy.sh <aws | hetzner>
 ```
+
+## Playing
+
+Just grab your server IP address (`output.json`) and start playing on your brand new server!
 
 ## Costs
 
