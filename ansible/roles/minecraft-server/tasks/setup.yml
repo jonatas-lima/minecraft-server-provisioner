@@ -1,0 +1,15 @@
+---
+- name: Install java and acl
+  ansible.builtin.apt:
+    pkg:
+      - openjdk-17-jdk-headless
+      - acl
+    state: present
+    update_cache: true
+
+- name: Create minecraft server user
+  ansible.builtin.user:
+    name: minecraft
+    shell: /bin/bash
+    system: true
+    home: /srv/minecraft

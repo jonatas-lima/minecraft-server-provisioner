@@ -1,0 +1,21 @@
+---
+- name: Config and install minecraft server
+  hosts: server
+  become: true
+  vars:
+    server_jar_url: https://piston-data.mojang.com/v1/objects/84194a2f286ef7c14ed7ce0090dba59902951553/server.jar
+    server_difficulty: easy
+    server_gamemode: survival
+    server_seed: null
+    server_max_players: 20
+    server_motd: My Own Minecraft Server
+    hardcore: false
+  roles:
+    - minecraft-server
+
+- name: Config server with systemd
+  hosts: server
+  become: true
+  gather_facts: false
+  roles:
+    - systemd

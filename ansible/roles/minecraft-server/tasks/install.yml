@@ -1,0 +1,16 @@
+---
+- name: Get server jar
+  ansible.builtin.get_url:
+    url: "{{ server_jar_url }}"
+    dest: /srv/minecraft
+    owner: minecraft
+    group: minecraft
+
+- name: Upload server required files
+  ansible.builtin.template:
+    src: "{{ item.src }}"
+    dest: "/srv/minecraft/{{ item.dest }}"
+    owner: minecraft
+  with_items:
+    - { src: eula.txt.j2, dest: eula.txt }
+    - { src: server.properties.j2, dest: server.properties }

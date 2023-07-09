@@ -1,0 +1,7 @@
+.env.*
+!.env.*.sample
+hosts.ini
+
+output.json
+
+.terraform

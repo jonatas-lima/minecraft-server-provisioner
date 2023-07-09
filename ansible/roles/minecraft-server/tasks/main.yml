@@ -1,0 +1,9 @@
+---
+- name: Setup minecraft server
+  become: true
+  import_tasks: setup.yml
+
+- name: Install minecraft server
+  become: true
+  become_user: minecraft
+  import_tasks: install.yml

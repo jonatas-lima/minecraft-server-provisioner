@@ -1,0 +1,8 @@
+---
+- name: Upload service file
+  ansible.builtin.template:
+    src: minecraft-server.service.j2
+    dest: /etc/systemd/system/minecraft-server.service
+  notify:
+    - Daemon-reload
+    - Restart and enable minecraft-server

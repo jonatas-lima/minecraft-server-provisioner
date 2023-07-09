@@ -1,0 +1,10 @@
+---
+- name: Daemon-reload
+  ansible.builtin.systemd:
+    daemon_reload: true
+
+- name: Restart and enable minecraft-server
+  ansible.builtin.systemd:
+    name: minecraft-server
+    state: restarted
+    enabled: true
