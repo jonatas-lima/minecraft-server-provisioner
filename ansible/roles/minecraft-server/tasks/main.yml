@@ -7,3 +7,6 @@
   become: true
   become_user: minecraft
   import_tasks: install.yml
+
+- name: Post install
+  import_tasks: post-install/main.yml

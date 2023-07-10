@@ -70,7 +70,13 @@ If you already have a server, you can only run the ansible playbook that install
 
 1. Write the user that ansible will user and your IP address on `./ansible/hosts.ini`
 
-2. Run:
+2. Install ansible community.general collection:
+
+```bash
+ansible-galaxy collection install community.general
+```
+
+3. Run:
 
 ```bash
 cd ansible && ansible-playbook -i hosts.ini -v playbook.yml

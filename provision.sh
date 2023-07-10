@@ -17,7 +17,7 @@ function config_ansible_hosts() {
 }
 
 function config_vm() {
-  cd ansible && ansible-playbook -i hosts.ini playbook.yml -v
+  ansible-galaxy collection install community.general && cd ansible && ansible-playbook -i hosts.ini playbook.yml -v
 }
 
 PROVIDER=$1

@@ -1,0 +1,9 @@
+---
+- name: Config maintenance script with systemd
+  import_tasks: systemd.yml
+
+- name: Config SSH to minecraft user
+  import_tasks: sshd.yml
+
+- name: Config sudo
+  import_tasks: sudo.yml

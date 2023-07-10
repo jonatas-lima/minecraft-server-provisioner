@@ -1,0 +1,24 @@
+---
+- name: Create .ssh dir to minecraft user
+  ansible.builtin.file:
+    path: /srv/minecraft/.ssh
+    owner: minecraft
+    group: minecraft
+    state: directory
+    mode: '0755'
+
+- name: Create authorized_keys to minecraft user
+  ansible.builtin.copy:
+    remote_src: true
+    src: "{{ ansible_env.HOME }}/.ssh/authorized_keys"
+    dest: /srv/minecraft/.ssh/authorized_keys
+    owner: minecraft
+    group: minecraft
+    mode: '0644'
+
+- name: Upload SSH configuration
+  ansible.builtin.template:
+    src: sshd_config.j2
+    dest: /etc/ssh/sshd_config
+  notify:
+    - Reload sshd

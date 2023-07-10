@@ -1,5 +1,5 @@
 ---
-- name: Config and install minecraft server
+- name: Config and install Minecraft Server
   hosts: server
   become: true
   vars:
@@ -12,10 +12,3 @@
     hardcore: false
   roles:
     - minecraft-server
-
-- name: Config server with systemd
-  hosts: server
-  become: true
-  gather_facts: false
-  roles:
-    - systemd

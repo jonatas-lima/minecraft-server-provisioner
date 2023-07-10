@@ -8,3 +8,8 @@
     name: minecraft-server
     state: restarted
     enabled: true
+
+- name: Reload sshd
+  ansible.builtin.systemd:
+    name: sshd
+    state: reloaded
