@@ -5,16 +5,21 @@ function provision_infra() {
 
   source env/.env.$provider && \
       cd terraform/$provider && \
+      terraform init && \
       terraform apply -auto-approve && \
       terraform output -json | tee ../../output.json && cd -
 }
 
 function config_ansible_hosts() {
-  /usr/bin/python3 parse_tf_output.py
+  provider=$1
+
+  /usr/bin/python3 parse_tf_output.py $provider
 }
 
 function config_vm() {
   cd ansible && ansible-playbook -i hosts.ini playbook.yml -v
 }
 
-provision_infra $1 && sleep 30 && config_ansible_hosts && config_vm
+PROVIDER=$1
+
+provision_infra $PROVIDER && sleep 30 && config_ansible_hosts $PROVIDER && config_vm

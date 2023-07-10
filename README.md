@@ -12,21 +12,25 @@
 
 ### AWS
 
-* An AWS account with access and secret keys, and the aws cli [installed](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-prereqs.html) and [configured](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
+* An AWS account with [access and secret keys](https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html).
 
 ### Hetzner
 
-TODO
+* An Hetzner Cloud account with a valid [API access token](https://docs.hetzner.com/cloud/api/getting-started/generating-api-token/).
 
 ## Which resources does Terraform will provision?
 
 ### AWS
 
-* t2.medium - us-east
+| Instance Type | OS           | RAM  | vCPUs |
+|---------------|--------------|------|-------|
+| t2.medium     | Ubuntu 22.04 | 4GB  |  2    |
 
 ### Hetzner
 
-TODO
+| Instance Type | OS           | RAM  | vCPUs |
+|---------------|--------------|------|-------|
+| CPX21         | Ubuntu 22.04 | 4GB  |  3    |
 
 ## How to
 
