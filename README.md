@@ -96,6 +96,27 @@ If you want to destroy your Minecraft Server instances, just run:
 * Go to Multiplayer on your Minecraft Client
 * Add your brand new server and start playing!
 
+## Managing
+
+1. SSH into your server:
+
+```bash
+ssh minecraft@<server ip address>
+```
+
+2. Your Minecraft Server simply is a systemd process, that you can manage with:
+
+```bash
+sudo /bin/systemctl (status | start | stop | restart | enable | disable)
+```
+
 ## Costs
 
+### AWS
+
 TODO
+
+### Hetzner
+
+| ~ 7.00€ |
+|---------|
