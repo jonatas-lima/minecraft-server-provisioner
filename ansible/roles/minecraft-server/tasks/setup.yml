@@ -4,6 +4,7 @@
     pkg:
       - openjdk-17-jdk-headless
       - acl
+      - screen
     state: present
     update_cache: true
 
