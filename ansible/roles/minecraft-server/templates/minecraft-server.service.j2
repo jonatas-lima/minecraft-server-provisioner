@@ -1,5 +1,6 @@
 [Unit]
 Description=start and stop the minecraft-server
+After=network.target
 
 [Service]
 WorkingDirectory=/srv/minecraft/
@@ -7,6 +8,7 @@ User=minecraft
 Group=minecraft
 Restart=on-failure
 RestartSec=20 5
+Type=forking
 ExecStart=/usr/bin/screen -dmS minecraft /usr/bin/java -Xms2G -Xmx2G -jar server.jar --nogui
 
 [Install]

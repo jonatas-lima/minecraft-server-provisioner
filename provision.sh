@@ -5,9 +5,9 @@ function provision_infra() {
 
   source env/.env.$provider && \
       cd terraform/$provider && \
-      terraform init && \
-      terraform apply -auto-approve && \
-      terraform output -json | tee ../../output.json && cd -
+      opentofu init && \
+      opentofu apply -auto-approve && \
+      opentofu output -json | tee ../../output.json && cd -
 }
 
 function config_ansible_hosts() {
