@@ -6,7 +6,7 @@
 
 ## Prerequisites
 
-* [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
+* [OpenTofu](https://opentofu.org/) or [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 * [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 * Minecraft Client
 
