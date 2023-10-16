@@ -1,6 +1,7 @@
 .env.*
 !.env.*.sample
 hosts.ini
+*.tfstate*
 
 output.json
 
