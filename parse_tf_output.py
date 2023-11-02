@@ -3,7 +3,7 @@ import sys
 
 provider = sys.argv[1]
 
-if provider == 'aws':
+if provider == 'aws' or 'openstack':
     user = 'ubuntu'
 elif provider == 'hetzner':
     user = 'root'
