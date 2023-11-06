@@ -1,12 +1,24 @@
 import json
 import sys
 
+
+class UnsupportedProviderException(Exception):
+    def __init__(self, *args: object) -> None:
+        super().__init__(*args)
+
+
 provider = sys.argv[1]
 
-if provider == 'aws' or 'openstack':
-    user = 'ubuntu'
-elif provider == 'hetzner':
-    user = 'root'
+PROVIDER_USER_MAP = {
+    'aws': 'ubuntu',
+    'openstack': 'ubuntu',
+    'hetzner': 'root'
+}
+
+user = PROVIDER_USER_MAP.get(provider)
+
+if user is None:
+    raise UnsupportedProviderException('Unsupported provider')
 
 with open('./output.json', 'r') as f:
     j = json.load(f)

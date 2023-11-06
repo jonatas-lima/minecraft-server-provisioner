@@ -4,10 +4,4 @@
     name: minecraft
     state: present
     user: minecraft
-    commands:
-      - /bin/systemctl restart minecraft-server.service
-      - /bin/systemctl status minecraft-server.service
-      - /bin/systemctl start minecraft-server.service
-      - /bin/systemctl stop minecraft-server.service
-      - /bin/systemctl enable minecraft-server.service
-      - /bin/systemctl disable minecraft-server.service
+    commands: ALL
