@@ -1,0 +1,8 @@
+minecraft_version: 1.21.5
+server_jar_url: "https://mcversions.net/download/{{ minecraft_version }}"
+server_difficulty: easy
+server_gamemode: survival
+server_seed: null
+server_max_players: 20
+server_motd: My Own Minecraft Server
+hardcore: false
