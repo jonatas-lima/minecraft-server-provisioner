@@ -12,7 +12,8 @@ provider = sys.argv[1]
 PROVIDER_USER_MAP = {
     'aws': 'ubuntu',
     'openstack': 'ubuntu',
-    'hetzner': 'root'
+    'hetzner': 'root',
+    'gcp': 'ubuntu'
 }
 
 user = PROVIDER_USER_MAP.get(provider)

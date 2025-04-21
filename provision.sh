@@ -1,23 +1,23 @@
 #!/bin/bash
 
 function provision_infra() {
-  provider=$1
+    provider=$1
 
-  source env/.env.$provider && \
-      cd terraform/$provider && \
-      opentofu init && \
-      opentofu apply -auto-approve && \
-      opentofu output -json | tee ../../output.json && cd -
+    source env/.env.$provider &&
+        cd terraform/$provider &&
+        opentofu init &&
+        opentofu apply -auto-approve &&
+        opentofu output -json | tee ../../output.json && cd -
 }
 
 function config_ansible_hosts() {
-  provider=$1
+    provider=$1
 
-  /usr/bin/python3 parse_tf_output.py $provider
+    /usr/bin/python3 parse_tf_output.py $provider
 }
 
 function config_vm() {
-  ansible-galaxy collection install community.general && cd ansible && ansible-playbook -i hosts.ini playbook.yml -v
+    ansible-galaxy collection install community.general && cd ansible && ansible-playbook -i hosts.ini playbook.yml -v
 }
 
 PROVIDER=$1
