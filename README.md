@@ -18,6 +18,10 @@
 
 * An Hetzner Cloud account with a valid [API access token](https://docs.hetzner.com/cloud/api/getting-started/generating-api-token/).
 
+### Magalu Cloud
+
+* A Magalu Cloud account with a valid [API Key](https://console.magalu.cloud/credentials).
+
 ## Which resources does Terraform will provision?
 
 ### AWS
@@ -31,6 +35,12 @@
 | Instance Type | OS           | RAM  | vCPUs |
 |---------------|--------------|------|-------|
 | CPX21         | Ubuntu 22.04 | 4GB  |  3    |
+
+### Magalu Cloud
+
+| Instance Type | OS           | RAM  | vCPUs |
+|---------------|--------------|------|-------|
+| BV2-4-10      | Ubuntu 24.04 | 4GB  |  2    |
 
 ## How to
 
@@ -47,7 +57,7 @@ The other variables are self-explainable.
 1. Init terraform:
 
 ```bash
-cd terraform/<aws | hetzner> && terraform init
+cd terraform/<aws | hetzner | magalu | openstack> && terraform init
 ```
 
 2. Create, if not existent, an SSH key:
@@ -56,12 +66,12 @@ cd terraform/<aws | hetzner> && terraform init
 ssh-keygen
 ```
 
-3. Config your credentials on `./env/.env.<aws | hetzner>`
+3. Config your credentials on `./env/.env.<aws | hetzner | magalu | openstack>`
 
 4. Provision your server:
 
 ```bash
-./provision.sh <aws | hetzner>
+./provision.sh <aws | hetzner | magalu | openstack>
 ```
 
 ### Just Configure
@@ -87,7 +97,7 @@ cd ansible && ansible-playbook -i hosts.ini -v playbook.yml
 If you want to destroy your Minecraft Server instances, just run:
 
 ```bash
-./destroy.sh <aws | hetzner>
+./destroy.sh <aws | hetzner | magalu | openstack>
 ```
 
 ## Playing
@@ -120,3 +130,8 @@ TODO
 
 | ~ 7.00€ / month |
 |-----------------|
+
+### Magalu Cloud
+
+| ~ R$ 82,99 / month |
+|--------------------|

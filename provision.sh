@@ -1,13 +1,20 @@
 #!/bin/bash
 
+TF_CMD=$(command -v opentofu || command -v terraform)
+
+if [ -z "$TF_CMD" ]; then
+  echo "Error: neither opentofu nor terraform found in PATH"
+  exit 1
+fi
+
 function provision_infra() {
   provider=$1
 
   source env/.env.$provider && \
       cd terraform/$provider && \
-      opentofu init && \
-      opentofu apply -auto-approve && \
-      opentofu output -json | tee ../../output.json && cd -
+      $TF_CMD init && \
+      $TF_CMD apply -auto-approve && \
+      $TF_CMD output -json | tee ../../output.json && cd -
 }
 
 function config_ansible_hosts() {
